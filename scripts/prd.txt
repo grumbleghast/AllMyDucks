@@ -1,0 +1,160 @@
+# AllMyDucks - Product Requirements Document
+
+## Project Overview
+AllMyDucks is a modern, intuitive To-Do list web application designed to help users organize and track daily tasks. The application focuses on a clean, minimalist UI while providing robust functionality for task management across multiple days.
+
+## Technology Stack
+- **Frontend**: React, HTML, CSS
+- **Backend**: Node.js with Express
+- **Database**: MongoDB Community
+- **Authentication**: JWT (JSON Web Tokens)
+- **UI Framework**: React Bootstrap for responsive design
+
+## Target Platforms
+- Modern web browsers (Chrome, Firefox, Safari, Edge)
+- Mobile devices (responsive design for iOS and Android)
+
+## Core Requirements
+
+### System Architecture
+1. Create a well-structured frontend and backend separation
+2. Implement MongoDB integration using provided compass-connections
+3. Ensure responsive design works seamlessly on both desktop and mobile devices
+
+### User Authentication
+1. Email-based registration with first name capture
+2. Login functionality with "Remember me" option
+3. Password recovery via "Forgot password" link
+4. Profile management with last login tracking
+
+### To-Do List Core Functionality
+1. Daily To-Do cards with current date display
+2. Task creation with rich text editing capabilities
+3. Task completion tracking with radio buttons
+4. Automatic repositioning of completed tasks
+5. Navigation between different days' To-Do lists
+6. Task completion statistics and visual feedback
+7. Task age tracking for overdue items (display small text showing days overdue if > 3 days)
+
+### Frontend Components
+
+#### Header Section
+1. Brand display with "All My Ducks" text and rubber duck logo
+2. Authentication controls (login/register icons with tooltips)
+3. Help icon with tooltip
+4. Date search with calendar popup
+5. Consistent #0096FF color scheme
+6. Dark mode toggle
+
+#### Body Section (To-Do Card)
+1. Date-specific To-Do card with bold title
+2. Rich text editor with formatting options:
+   - Text color changes
+   - Bold, italic, underline formatting
+   - Poppins font integration from Google Fonts
+   - Emoticon support
+3. Task list with radio buttons for completion status
+4. Scrollable interface for longer lists
+5. Task position management based on completion status
+6. Completion statistics (e.g., "7/10 completed") with color coding
+7. Navigation arrows for moving between days
+8. Task priority indicators (High, Normal, Low)
+9. Small text showing days overdue for tasks carried forward more than 3 days
+
+#### Footer Section
+1. Motivational quote about productivity (ChatGPT-sourced)
+2. Privacy policy link
+3. Acceptable use policy link
+4. Consistent #0096FF color scheme
+
+### Backend Requirements
+
+#### User Management
+1. User registration and authentication
+2. Profile persistence with last login tracking
+3. "Remember me" functionality via persistent cookies/tokens
+
+#### Data Management
+1. To-Do item CRUD operations
+2. Date-based retrieval of To-Do lists
+3. Task completion status tracking
+4. Automatic transfer of incomplete tasks to next day
+5. Statistics calculation for completion rates
+6. Track and calculate task age for overdue items
+7. Store user theme preference (light/dark mode)
+
+#### Security
+1. Input validation for all user-submitted data
+2. Secure password storage with hashing
+3. Protection against common web vulnerabilities
+
+### Data Models
+
+#### User
+- First name
+- Email (unique identifier)
+- Password (hashed)
+- Last login date
+- Remember me preference
+- Theme preference (light/dark)
+
+#### To-Do List
+- Date (unique per user)
+- User reference
+- Tasks array
+- Completion statistics
+
+#### Task
+- Content (with formatting)
+- Creation date
+- Completion status
+- Position in list
+- Priority level (High, Normal, Low)
+- Original creation date (for tracking overdue days)
+
+## Non-Functional Requirements
+
+### Performance
+- Fast loading times (<2 seconds)
+- Responsive UI with no lag during interactions
+- Efficient database queries
+
+### Security
+- HTTPS for all connections
+- Protection against XSS and CSRF attacks
+- Secure authentication implementation
+
+### Usability
+- Intuitive, minimalist interface
+- Responsive design for all screen sizes
+- Clear feedback for all user actions
+- Accessible dark mode alternative
+
+## Enhancement Suggestions
+
+1. **Task Categories**: Allow users to categorize tasks for better organization
+2. **Recurring Tasks**: Enable setting up tasks that automatically repeat on specific days
+3. **Task Priority Levels**: Implement three priority levels for tasks:
+   - High: For urgent and important tasks
+   - Normal: For standard priority tasks (default)
+   - Low: For tasks that can be deferred if necessary
+   - Visual indicators should distinguish different priority levels
+4. **Dark Mode**: Add a theme toggle for users who prefer dark interfaces, with persistent preference across sessions
+5. **Overdue Task Tracking**: Display the number of days a task has been left undone (in small font at the end of the task) when a task is more than 3 days overdue (e.g., "(7 days overdue)")
+6. **Task Reminders**: Optional notifications for upcoming or overdue tasks
+7. **Task Sharing**: Allow sharing of specific tasks or lists with other users
+8. **Data Export**: Provide functionality to export To-Do history in common formats
+
+## Implementation Priorities
+1. Usability - Focus on intuitive, frictionless user experience
+2. Clean, minimalist design - Emphasize visual simplicity and clarity
+3. Security - Ensure data protection and application security
+4. Code clarity - Write well-commented, maintainable code
+
+## Potential Challenges
+1. Ensuring smooth date transitions at midnight
+2. Maintaining performance with rich text editing
+3. Balancing minimalist design with feature richness
+4. Handling time zone differences appropriately
+5. Implementing visually appealing but subtle task priority indicators
+6. Ensuring dark mode provides sufficient contrast across all components 

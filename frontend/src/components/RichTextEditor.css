@@ -1,0 +1,144 @@
+/* Import Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.rich-text-editor-container {
+  position: relative;
+  margin-bottom: 15px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.rich-text-editor {
+  min-height: 80px;
+  padding: 10px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  background-color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  overflow-y: auto;
+}
+
+.rich-text-editor:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Placeholder style */
+.rich-text-editor:empty:before {
+  content: attr(placeholder);
+  color: #6c757d;
+  pointer-events: none;
+}
+
+/* Toolbar styling */
+.editor-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 8px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  z-index: 100;
+}
+
+.toolbar-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border: 1px solid #ced4da;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.toolbar-btn:hover {
+  background-color: #e9ecef;
+}
+
+.color-picker {
+  max-width: 100px;
+  height: 30px;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Emoji picker styling */
+.emoji-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+
+.emoji-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background-color: transparent;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 16px;
+}
+
+.emoji-btn:hover {
+  background-color: #e9ecef;
+}
+
+/* Fix for dark mode */
+body.dark-mode .rich-text-editor {
+  background-color: #343a40;
+  color: #f8f9fa;
+  border-color: #495057;
+}
+
+body.dark-mode .editor-toolbar {
+  background-color: #343a40;
+  border-color: #495057;
+}
+
+body.dark-mode .toolbar-btn {
+  background-color: #495057;
+  color: #f8f9fa;
+  border-color: #6c757d;
+}
+
+body.dark-mode .toolbar-btn:hover {
+  background-color: #6c757d;
+}
+
+body.dark-mode .color-picker {
+  background-color: #495057;
+  color: #f8f9fa;
+  border-color: #6c757d;
+}
+
+body.dark-mode .emoji-btn:hover {
+  background-color: #495057;
+}
+
+/* Responsive styles */
+@media (max-width: 576px) {
+  .editor-toolbar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .emoji-picker {
+    margin-top: 5px;
+    width: 100%;
+    justify-content: center;
+  }
+} 

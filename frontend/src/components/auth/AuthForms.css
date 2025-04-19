@@ -1,0 +1,168 @@
+/* Styles for authentication forms */
+
+.auth-card {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.auth-icon {
+  font-size: 2.5rem;
+  color: #0096FF;
+  margin-bottom: 1rem;
+}
+
+.auth-card .card-body {
+  padding: 2rem;
+}
+
+.form-control:focus {
+  border-color: #0096FF;
+  box-shadow: 0 0 0 0.25rem rgba(0, 150, 255, 0.25);
+}
+
+/* Input group styling */
+.input-group-text {
+  background-color: #0096FF;
+  color: white;
+  border: 1px solid #0096FF;
+}
+
+/* Button styling */
+.btn-primary {
+  background-color: #0096FF;
+  border-color: #0096FF;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #0078cc !important;
+  border-color: #0078cc !important;
+}
+
+.btn-primary:disabled {
+  background-color: #66bdff;
+  border-color: #66bdff;
+}
+
+/* Forgot password link */
+.forgot-password-link {
+  color: #0096FF;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s;
+}
+
+.forgot-password-link:hover {
+  color: #0078cc;
+  text-decoration: underline;
+}
+
+/* Switch between login/register */
+.text-center a {
+  color: #0096FF;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.text-center a:hover {
+  text-decoration: underline;
+}
+
+/* Custom checkbox styling */
+.form-check-input:checked {
+  background-color: #0096FF;
+  border-color: #0096FF;
+}
+
+/* Animation for form transition */
+.auth-card {
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Profile styles */
+.profile-card {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  background-color: #e8f4ff;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #0096FF;
+}
+
+.profile-icon {
+  font-size: 3rem;
+  color: #0096FF;
+}
+
+.profile-nav .nav-link {
+  color: #333;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  transition: all 0.2s;
+}
+
+.profile-nav .nav-link:hover {
+  background-color: #e8f4ff;
+  color: #0096FF;
+}
+
+.profile-nav .nav-link.active {
+  background-color: #0096FF;
+  color: white;
+}
+
+.tab-content {
+  min-height: 300px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .auth-card .card-body {
+    padding: 1.5rem;
+  }
+  
+  .auth-icon {
+    font-size: 2rem;
+  }
+  
+  .profile-nav {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1.5rem;
+  }
+  
+  .profile-nav .nav-link {
+    margin-right: 0.5rem;
+    margin-bottom: 0;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+  
+  .tab-content {
+    padding: 0;
+  }
+} 

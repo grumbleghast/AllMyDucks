@@ -1,0 +1,375 @@
+.todo-card {
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.todo-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.todo-card .card-header {
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.todo-date {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.task-list {
+  margin-bottom: 1rem;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.task-item {
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  border-left: 4px solid transparent;
+  background-color: #f8f9fa;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.task-item:hover {
+  background-color: #e9ecef;
+}
+
+.task-item.completed {
+  opacity: 0.7;
+}
+
+.task-item.completed .task-content {
+  text-decoration: line-through;
+  color: #6c757d;
+}
+
+.task-content {
+  flex: 1;
+  overflow-wrap: break-word;
+}
+
+.task-actions {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.task-item:hover .task-actions {
+  visibility: visible;
+  opacity: 1;
+}
+
+.edit-task-btn,
+.delete-task-btn {
+  color: #6c757d;
+  padding: 4px;
+  transition: all 0.2s ease;
+}
+
+.edit-task-btn:hover {
+  color: #0d6efd;
+}
+
+.delete-task-btn:hover {
+  color: #dc3545;
+}
+
+/* Priority colors */
+.task-item.priority-high {
+  border-left-color: #dc3545;
+}
+
+.task-item.priority-medium {
+  border-left-color: #ffc107;
+}
+
+.task-item.priority-low {
+  border-left-color: #6c757d;
+}
+
+/* Overdue indicator */
+.overdue-indicator {
+  font-size: 0.8rem;
+  font-style: italic;
+  align-self: center;
+  white-space: nowrap;
+}
+
+/* Priority Dropdown */
+.priority-dropdown {
+  display: flex;
+  align-items: center;
+}
+
+.priority-dropdown.priority-high {
+  color: #dc3545;
+}
+
+.priority-dropdown.priority-medium {
+  color: #ffc107;
+}
+
+.priority-dropdown.priority-low {
+  color: #6c757d;
+}
+
+.priority-item {
+  display: flex;
+  align-items: center;
+}
+
+.priority-select.priority-high {
+  border-color: #dc3545;
+}
+
+.priority-select.priority-medium {
+  border-color: #ffc107;
+}
+
+.priority-select.priority-low {
+  border-color: #6c757d;
+}
+
+/* Add Task Button */
+.add-task-btn {
+  padding: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.add-task-btn:hover {
+  background-color: #f8f9fa;
+}
+
+.add-task-container {
+  border-radius: 4px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+/* Navigation buttons */
+.navigation-btn {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: #6c757d;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.navigation-btn:hover {
+  color: #0d6efd;
+  transform: scale(1.2);
+}
+
+/* Completion stats */
+.completion-stats {
+  flex: 1;
+  margin: 0 1rem;
+}
+
+.completion-stats small {
+  color: #6c757d;
+}
+
+/* Style for formatted content */
+.task-content {
+  font-family: 'Poppins', sans-serif;
+}
+
+.task-content p {
+  margin-bottom: 0;
+}
+
+.task-content a {
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+.task-content a:hover {
+  text-decoration: underline;
+}
+
+/* Dark mode support */
+body.dark-mode .todo-card {
+  background-color: #2a2a2a;
+  border-color: #444;
+}
+
+body.dark-mode .todo-card .card-header {
+  background-color: #333;
+  border-color: #444;
+}
+
+body.dark-mode .todo-card .card-footer {
+  background-color: #333;
+  border-color: #444;
+}
+
+body.dark-mode .todo-date,
+body.dark-mode .task-content,
+body.dark-mode .completion-stats small {
+  color: #f5f5f5;
+}
+
+body.dark-mode .task-item {
+  background-color: #333;
+  color: #f5f5f5;
+}
+
+body.dark-mode .task-item:hover {
+  background-color: #444;
+}
+
+body.dark-mode .task-item.completed .task-content {
+  color: #adb5bd;
+}
+
+body.dark-mode .edit-task-btn,
+body.dark-mode .delete-task-btn {
+  color: #adb5bd;
+}
+
+body.dark-mode .edit-task-btn:hover {
+  color: #0d6efd;
+}
+
+body.dark-mode .delete-task-btn:hover {
+  color: #dc3545;
+}
+
+body.dark-mode .navigation-btn {
+  color: #adb5bd;
+}
+
+body.dark-mode .navigation-btn:hover {
+  color: #0d6efd;
+}
+
+body.dark-mode .modal-header,
+body.dark-mode .modal-footer {
+  border-color: #444;
+}
+
+body.dark-mode .modal-content {
+  background-color: #343a40;
+  border-color: #495057;
+}
+
+body.dark-mode .modal-title {
+  color: #f8f9fa;
+}
+
+body.dark-mode .form-label {
+  color: #f8f9fa;
+}
+
+/* Responsive styles */
+@media (max-width: 576px) {
+  .todo-date {
+    font-size: 1.25rem;
+  }
+  
+  .task-list {
+    max-height: 300px;
+  }
+  
+  .navigation-btn {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .task-actions {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .completion-stats {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+/* Make scrollbars match the theme */
+body.dark-mode .task-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+body.dark-mode .task-list::-webkit-scrollbar-track {
+  background: #333;
+}
+
+body.dark-mode .task-list::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 8px;
+}
+
+/* Transferred task styling */
+.task-item.transferred {
+  border-right: 4px solid #17a2b8;
+  padding-right: 20px;
+}
+
+.task-item.transferred::after {
+  content: '↺';
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #17a2b8;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.transferred-indicator {
+  font-size: 0.8rem;
+  color: #17a2b8;
+  margin-right: 8px;
+  white-space: nowrap;
+}
+
+.transferred-badge {
+  background-color: #17a2b8;
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 10px;
+  margin-left: 8px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.transferred-badge svg {
+  margin-right: 3px;
+  font-size: 0.7rem;
+}
+
+/* Dark mode support for transferred tasks */
+body.dark-mode .task-item.transferred {
+  border-right-color: #20c997;
+}
+
+body.dark-mode .task-item.transferred::after {
+  color: #20c997;
+}
+
+body.dark-mode .transferred-indicator {
+  color: #20c997;
+}
+
+body.dark-mode .transferred-badge {
+  background-color: #20c997;
+  color: #222;
+} 
